@@ -3,7 +3,8 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles.css"/>
-        <title>CoderDojo Ieper - Zonnebeke</title>
+        <title>Tutorial: een statische website</title>
+        <script src="https://kit.fontawesome.com/7788d51c7e.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -12,39 +13,46 @@
         </script>
 
         <header>
-            <a href="">
-                <img src="CoderDojo Logo (light bg).svg" alt="CoderDojo logo"/>
-            
-                <img src="CoderDojo Logo (dark bg).svg" alt="CoderDojo logo"/>            
-            </a>
+            <div>
+                <a href="">
+                    <!-- <img src="CoderDojo Logo (light bg).svg" alt="CoderDojo logo"/> -->
+                
+                    <img src="CoderDojo Logo (light bg).svg" alt="CoderDojo logo"/>            
+                </a>
+    
+                <ul>
+                    <li><a href="" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+
+            <h1>Demo: een statische website</h1>
 
             <button id="menu_button" type="button">
-                <span>Menu</span>
-                <span>Sluiten</span>
-            </button>
+                <span><i class="fas fa-bars"></i></span>
+                <span><i class="fas fa-xmark"></i></span>
+            </button>   
         </header>
 
         <aside>
             <ul id="menu_items">
-                <li class="active"><button type="button">Over</button></li>
-                <li><button type="button">Projecten</button></li>
-                <li><button type="button">Aansluiten</button></li>
-                <li><button type="button">Nieuws</button></li>
-                <li><button type="button">Contact</button></li>
+                <li class="active"><button type="button">Intro</button></li>
+                <li><button type="button">GitHub</button></li>
+                <li><button type="button">HTML</button></li>
+                <li><button type="button">CSS</button></li>
+                <li><button type="button">JavaScript</button></li>
             </ul>
         </aside>
 
         <main>
-            <h1>CoderDojo Ieper - Zonnebeke</h1>
-
-            <article id="over" class="active">
-                <h2>Over</h2>
+            <article id="Intro" class="active">
+                <h2>Intro</h2>
 
                 <div>
                     <img src="assets/CD_TEEN_SET_Teen Eight Crop-112.png" alt="Teen DIY"/>
 
                     <p>
-                        In de CoderDojo leer je programmeren.
+                        Deze tutorial leert hoe je zelf, stap voor stap, een website maakt.  
                     </p>    
                 </div>
 
@@ -71,12 +79,93 @@
                         Eén keer per maand op zaterdag van 9 uur tot 12 uur.
                     </p>    
                 </div>
-
-
             </article>
 
-            <article id="projecten">
-                <h2>Projecten</h2>
+            <article id="GitHub">
+                <h2>Nieuws</h2>
+
+                <p>
+                    Lorem ipsum odor amet, consectetuer adipiscing elit. Vivamus faucibus curabitur non litora etiam nunc. Consectetur quisque donec duis quam arcu. Nulla nam congue consectetur diam molestie maecenas proin elementum. Class mollis massa justo; placerat a netus. Netus sodales elementum potenti id duis. Integer euismod pellentesque arcu lobortis; bibendum scelerisque porta risus. Dolor molestie dui per vehicula pulvinar feugiat taciti. Mauris sapien gravida pharetra risus; torquent adipiscing fringilla vehicula dignissim?                
+                </p>
+            </article>
+
+            <article id="HTML">
+                <h2>HTML</h2>
+
+                <section>
+                    <h3>Theorie: lees de volgende documentatie</h3>
+
+                    <ul>
+                        <li><a href="https://www.w3schools.com/html/html_intro.asp" target="_blank">HTML Introduction</a></li>
+                        <li><a href="https://www.w3schools.com/html/html_basic.asp" target="_blank">HTML Basic</a></li>
+                        <li><a href="https://www.w3schools.com/html/html_elements.asp" target="_blank">HTML Elements</a></li>
+                        <li><a href="https://www.w3schools.com/html/html_layout.asp" target="_blank">HTML Layout</a></li>
+                        
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Praktijk</h3>
+
+                    <ol type="1">
+                        <li>
+                            <h4>HTML-document</h4>
+                            
+                            <div>
+                                <p>Maak een HTML document aan met de volgende structuur:</p>
+            
+                                <code>
+                                    &lt;!DOCTYPE html&gt;<span>[1]</span><br>
+                                    &lt;html lang="nl"&gt;<span>[2]</span><br>
+                                    &lt;head&gt;<br>
+                                        &emsp;&lt;title&gt;<span>[3]</span>&lt;/title&gt;<br>
+                                    &lt;/head&gt;<br>
+                                    &lt;body&gt;<br>
+                                    &lt;/body&gt;<br>
+                                    &lt;/html&gt;<br>
+                                </code>
+
+                                <ul>
+                                    <li><span>[1]</span> We maken een HTML document.</li>
+                                    <li><span>[2]</span> De inhoud van onze website is in het nederlands ('nl').</li>
+                                    <li><span>[3]</span> Geef je website hier een titel.</li>
+                                </ol>
+                            </div>
+                        </li>
+
+                        <li>
+                            <h4>Layout</h4>
+                            <p>Maak  in de body tag een layout met de volgende structuur:</p>
+                            
+                            <code>
+                                &lt;header&gt;<span>(4)</span><br> 
+                                &lt;/header&gt;<br>
+                                <br>
+                                &lt;aside&gt;<span>(5)</span><br>
+                                &lt;/aside&gt;<br>
+                                <br>
+                                &lt;main&gt;<span>(6)</span><br>
+                                &lt;/main&gt;<br>
+                                <br>
+                                &lt;footer&gt;<span>(7)</span><br>  
+                                &lt;/footer&gt;<br>
+                            </code>
+        
+                            <ol type="1">
+                                <li>We maken een HTML document.</li>
+                                <li>De inhoud van onze website is in het nederlands ('nl').</li>
+                                <li>Geef je website een naam.</li>
+                                <li>In de header komt het logo.</li>
+                                <li>In de aside komt het menu.</li>
+                                <li>In de main komt de inhoud van onze website.</li>
+                                <li>In de footer komt de copyright.</li>
+                            </ol>
+                        </li>
+                    </ol>
+
+
+
+                </section>
 
                 <div>
                     <img src="assets/Clock.png" alt="Earth"/>
@@ -127,7 +216,7 @@
                 </div>
             </article>
 
-            <article id="aansluiten">
+            <article id="CSS">
                 <h2>Aansluiten</h2>
 
                 <p>
@@ -135,16 +224,8 @@
                 </p>
             </article>
 
-            <article id="nieuws">
+            <article id="JavaScript">
                 <h2>Nieuws</h2>
-
-                <p>
-                    Lorem ipsum odor amet, consectetuer adipiscing elit. Vivamus faucibus curabitur non litora etiam nunc. Consectetur quisque donec duis quam arcu. Nulla nam congue consectetur diam molestie maecenas proin elementum. Class mollis massa justo; placerat a netus. Netus sodales elementum potenti id duis. Integer euismod pellentesque arcu lobortis; bibendum scelerisque porta risus. Dolor molestie dui per vehicula pulvinar feugiat taciti. Mauris sapien gravida pharetra risus; torquent adipiscing fringilla vehicula dignissim?                
-                </p>
-            </article>
-
-            <article id="contact">
-                <h2>Contact</h2>
 
                 <p>
                     Lorem ipsum odor amet, consectetuer adipiscing elit. Vivamus faucibus curabitur non litora etiam nunc. Consectetur quisque donec duis quam arcu. Nulla nam congue consectetur diam molestie maecenas proin elementum. Class mollis massa justo; placerat a netus. Netus sodales elementum potenti id duis. Integer euismod pellentesque arcu lobortis; bibendum scelerisque porta risus. Dolor molestie dui per vehicula pulvinar feugiat taciti. Mauris sapien gravida pharetra risus; torquent adipiscing fringilla vehicula dignissim?                

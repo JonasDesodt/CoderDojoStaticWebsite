@@ -1,5 +1,13 @@
 /* https://help.coderdojo.com/cdkb/s/article/CoderDojo-branding */
 
+:root{
+    --overlay-background-color: rgba(0,0,0,.9);
+    --overlay-foreground-color: rgb(255,255,255);
+    --coder-dojo-purple: rgb(100, 37, 128);
+    --coder-dojo-teal: rgb(65, 186, 193);
+    --coder-dojo-orange: rgb(237, 104, 74);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,11 +15,8 @@
 }
 
 body {
-    /* display: flex;
-    flex-direction: column; */
-
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     font-family: 'Lato', sans-serif;
     font-size: 14px;
@@ -19,51 +24,69 @@ body {
     overflow-y: scroll;
 }
 
-body > header {
-    grid-column: 1/3;
-    grid-row: 1/2;
-
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    padding: 2em 1em;
+body > header,
+body > footer
+{
+    background-color: transparent;
 }
 
-body > header > #menu_button {
+body > header {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1em; */
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+body > header > button#menu_button {
     display: none;
     align-self: flex-end;
 }
 
-body.javaScript > header > #menu_button {
+body.javaScript > header > button#menu_button {
     display: initial;
 }
 
-body.javaScript > header > #menu_button > span:first-of-type {
+body.javaScript > header > button#menu_button > span:first-of-type {
     display: initial;
 }
 
-body.javaScript > header > #menu_button > span:last-of-type {
+body.javaScript > header > button#menu_button > span:last-of-type {
     display: none;
 }
 
-body.javaScript.menu-open > header > #menu_button > span:first-of-type {
+body.javaScript.menu-open > header > button#menu_button > span:first-of-type {
     display: none;
 }
 
-body.javaScript.menu-open > header > #menu_button > span:last-of-type {
+body.javaScript.menu-open > header > button#menu_button > span:last-of-type {
     display: initial;
 }
 
-body > header > a > img:last-of-type {
-    display: none;
+body > header > h1 {
+    align-self: stretch;
+    background-color: var(--coder-dojo-purple);
+    color: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    text-align: center;
 }
 
-body.javaScript.menu-open > header > a > img:first-of-type {
-    display: none;
+/*     body.javaScript.menu-open > header > div > ul > li > a {
+        color: white;
+    } */
+
+body > header > div > ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: flex-end;
+    list-style-type: none;
 }
 
-body.javaScript.menu-open > header > a > img:last-of-type {
-    display: initial;
+body > header > div > ul > li > a {
+    color: black;
+    font-size: 1.5em;
 }
 
 body > aside {
@@ -72,79 +95,83 @@ body > aside {
 
 body.javaScript > aside {
     align-items: center;
-    background-color: rgba(0,0,0, .9);
+    background-color: var(--overlay-background-color);
     flex-direction: column;
-    grid-column: 1/3;
+    grid-column: 1/2;
     grid-row: 2/3;
-    padding: 1em;
     z-index: 1;
 }
 
 body.javaScript.menu-open > header {
-    background-color: rgba(0,0,0, .9);
-}
-
-body.javaScript.menu-open > footer {
-    background-color: rgba(0,0,0, .9);
-}
-
-body.javaScript.menu-open > footer > p {
-    color: rgb(255,255,255);
+    background-color: var(--overlay-background-color);
 }
 
 body.javaScript.menu-open > aside {
     display: flex;
 }
 
-body.javaScript.menu-open > header > ul#menu_items {
+body > header > div {
+    align-items: center;
+    background-color: white;
     display: flex;
+    flex-direction: row;
+    gap: 1em;
+    padding: 1em;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-body > header > a > img {
-    max-width: 100%;
+
+
+body > header > div > a {
+    max-width: 10em;
+}
+body > header > div > a > img {
+    width: 100%;
 }
 
-body > header > ul {
-    display: none;
+
+body.javaScript > aside {
+    padding: 1em;
 }
 
 body.javaScript > aside > ul#menu_items {
-    flex-direction: column;
-    gap: 1em;
+
     list-style-type: none;
 }
 
 body.javaScript > aside > ul#menu_items > li > button {
     background-color: transparent;
     border: none;
-    color: rgb(255,255,255);
+    color: var(--overlay-foreground-color);
     font-weight: bold;
+    text-align: left;
+    width: 100%;
 }
 
-body.javaScript > aside > ul#menu_items > li.active > button {
-    color: blue;
+body.javaScript > aside > ul#menu_items > li > button:hover {
+    color: var(--coder-dojo-purple);
+}
+
+body.javaScript > aside > ul#menu_items > li > button:active {
+    color: var(--coder-dojo-teal);
+}
+body.javaScript > aside > ul#menu_items > li.active::marker {
+    content: "\279C";
+    color: var(--coder-dojo-teal);
 }
 
 body > main {
-    grid-column: 1/3;
-    grid-row: 2/3;
-
     display: flex;
     flex-direction: column;
-    /* flex-grow: 1; */
-    padding: 1em 0 2em 0;
+    grid-column: 1/2;
+    grid-row: 2/3;
 }
 
-body > main > h1 {
-    align-self: center;
-    padding: 1em;
-}
+
 
 body > main > article {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    padding: 2em 1em;
+    padding: 1em;
 }
 
 body.javaScript > main > article {
@@ -152,7 +179,7 @@ body.javaScript > main > article {
 }
 
 body.javaScript > main > article.active {
-    display: flex;
+    display: grid;
 }
 
 body > main > article > div {
@@ -165,19 +192,13 @@ body > main > article > div > img {
     max-width: 100%;
 }
 
-body > main > article#over {
-    background-color: aquamarine;
-}
-
-body > main > article#nieuws {
-    background-color: palegoldenrod;
-}
-
 body > footer {
-    grid-column: 1/3;
+    background-color: black;
+    color: white;
+    font-size: .8em;
+    grid-column: 1/2;
     grid-row: 3/4;
-
-    padding: 2em 1em;
+    padding: 1rem;
 }
 
 body > footer > p {
@@ -185,13 +206,129 @@ body > footer > p {
 }
 
 button {
+    background-color: transparent;
+    border: none;
     cursor: pointer;
-    font-size: 1em;;
-    padding: .5em;
+    padding: .5rem 1rem;
+}
+
+section > ol {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 1em;
+}
+section > ol > li > h4 {
+    padding: 1em 0;
+}
+section > ol > li  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+section > ol > li > div > ul {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    list-style-type: none;
+
+}
+
+section > ol > li > div > code > span,
+section > ol > li > div > ul > li > span {
+    color:red;
+    font-weight: bold;
+}
+
+section > ol > li > div > code {
+    display: block;
+    background-color: bisque;
+    padding: 1em;
+}
+
+body.javaScript > header > button {
+    font-size: 1.5em;
+}
+
+body.javaScript.menu-open > header > button {
+    color: white;
 }
 
 @media only screen and (min-width: 600px){
+    body > main > article 
+    {   
+        display: grid;
+        gap: 2em;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+    }
+
+    body > main > article > h2 {
+        grid-column: 1/3;
+    }
+
+    body > main > article > div {
+        display: row;
+    }
+
+    body > main > article > div > img {
+        max-height: 25em;
+        object-fit: contain;
+    }
+    
     body {
+        grid-template-columns: auto 1fr;
+        column-gap: 2em;
         font-size: 16px;
+        row-gap: 2em;
+    }
+
+    body.javaScript > aside {
+       background-color: transparent;    
+       display: initial;
+       grid-column: 1/2; 
+       padding: 1em 1em 1em 5em;
+    }
+
+    body.javaScript > aside > ul#menu_items {
+        padding: 0 0 0 1em; /* space for the marker */
+    }
+
+    body.javaScript > aside > ul#menu_items > li > button,
+    body.javaScript.menu-open > aside > ul#menu_items > li > button {
+        color: rgb(0,0,0);
+    }
+
+    body > header {
+        grid-column: 1/3;
+    }
+
+    body.javaScript.menu-open > header {
+        background-color: initial;
+    }
+
+    body > main {
+        grid-column: 2/3;
+        padding: 0 5em 0 0;
+    }
+
+    body > footer {
+        grid-column: 1/3;
+        padding: 1em 5em;
+    }
+
+    body.javaScript > header > button#menu_button,
+    body.javaScript.menu-open > header > button#menu_button {
+        display: none;
+    }
+
+    body > header > div {
+        padding: 1em 5em;
+    }
+
+    body.javaScript.menu-open > header > div > ul > li > a,
+    body.javaScript.menu-open > header > button {
+        color: black;
     }
 }

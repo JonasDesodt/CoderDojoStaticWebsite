@@ -13,7 +13,8 @@ Array.from(menuItems).forEach(function(menuItem){
         activeArticle.classList.remove('active'); 
         activeMenuItem.classList.remove('active');       
 
-        let article = document.getElementById(menuItem.textContent.toLowerCase());
+        //let article = document.getElementById(menuItem.textContent.toLowerCase());
+        let article = document.getElementById(menuItem.textContent);
         
         article.classList.add('active');
         menuItem.classList.add('active');
